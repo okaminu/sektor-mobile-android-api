@@ -4,8 +4,8 @@ apply from: 'aws-credentials.gradle'
 publishing {
     publications {
         mavenJava(MavenPublication) { publication ->
-            groupId 'lt.tlistas.loginn'
-            artifactId = 'mobile-android-api'
+            groupId 'lt.tlistas.loginn.mobile'
+            artifactId = 'android-api'
             version '1.1.1'
             from components.java
 

@@ -1,3 +1,3 @@
-package lt.tlistas.loginn.backend.exception
+package lt.tlistas.loginn.mobile.android.api.exception
 
 class CollaboratorNotFoundException : RuntimeException()

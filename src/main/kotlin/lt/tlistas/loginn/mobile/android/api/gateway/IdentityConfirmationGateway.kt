@@ -1,7 +1,7 @@
 package lt.tlistas.loginn.mobile.android.api.gateway
 
-interface AuthenticationGateway {
-    fun requestConfirmationCode(mobileNumber: String)
+interface IdentityConfirmationGateway {
+    fun requestCode(mobileNumber: String)
 
     fun confirmCode(confirmationCode: String): String
 }

@@ -1,3 +1,3 @@
-package lt.tlistas.loginn.mobile.android.api.type.valueobject
+package lt.boldadmin.sektor.mobile.android.api.valueobject
 
 data class GpsCoordinates(val latitude: Double, val longitude: Double)

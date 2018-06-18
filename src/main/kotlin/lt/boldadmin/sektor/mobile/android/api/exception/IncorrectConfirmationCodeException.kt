@@ -1,3 +1,3 @@
-package lt.tlistas.loginn.mobile.android.api.exception
+package lt.boldadmin.sektor.mobile.android.api.exception
 
 class IncorrectConfirmationCodeException: RuntimeException()

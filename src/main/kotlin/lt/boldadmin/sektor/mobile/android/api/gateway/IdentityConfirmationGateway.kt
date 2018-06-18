@@ -1,4 +1,4 @@
-package lt.tlistas.loginn.mobile.android.api.gateway
+package lt.boldadmin.sektor.mobile.android.api.gateway
 
 interface IdentityConfirmationGateway {
     fun requestCode(mobileNumber: String)

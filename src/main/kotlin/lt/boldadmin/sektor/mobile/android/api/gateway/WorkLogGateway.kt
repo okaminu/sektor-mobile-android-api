@@ -8,5 +8,6 @@ interface WorkLogGateway {
     fun getDescription(intervalId: String): String
     fun getProjectNameOfStartedWork(): String
     fun hasWorkStarted(): Boolean
+    fun getDurationsSum(intervalIds: Collection<String>): Long
     fun updateDescription(intervalId: String, description: String)
 }

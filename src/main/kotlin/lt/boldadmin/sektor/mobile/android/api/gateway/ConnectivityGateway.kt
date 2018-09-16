@@ -1,6 +1,6 @@
 package lt.boldadmin.sektor.mobile.android.api.gateway
 
-interface StatusGateway {
+interface ConnectivityGateway {
 
     fun isHealthy() : Boolean
 

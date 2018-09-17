@@ -4,7 +4,7 @@ import lt.boldadmin.sektor.mobile.android.api.type.entity.WorkLogIntervalEndpoin
 import lt.boldadmin.sektor.mobile.android.api.valueobject.GpsCoordinates
 
 interface WorkLogGateway {
-    fun getIntervalIdsByCollaborator(): List<String>
+    fun getIntervalIdsByCollaborator(): Collection<String>
     fun getProjectNameOfStartedWork(): String
     fun hasWorkStarted(): Boolean
     fun getIntervalEndpoints(intervalId: String): WorkLogIntervalEndpoints

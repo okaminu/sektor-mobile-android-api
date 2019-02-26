@@ -8,6 +8,5 @@ interface WorklogGateway {
     fun getProjectNameOfStartedWork(): String
     fun hasWorkStarted(): Boolean
     fun getIntervalEndpoints(intervalId: String): WorkLogIntervalEndpoints
-    fun getDurationsSum(intervalIds: Collection<String>): Long
     fun logByLocation(gpsCoordinates: GpsCoordinates)
 }

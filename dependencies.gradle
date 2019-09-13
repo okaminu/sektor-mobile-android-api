@@ -1,0 +1,9 @@
+repositories {
+    jcenter()
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
+    detektPlugins "io.gitlab.arturbosch.detekt:detekt-formatting:$detekt_version"
+}

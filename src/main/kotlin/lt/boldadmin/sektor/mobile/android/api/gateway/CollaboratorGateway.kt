@@ -5,7 +5,7 @@ import lt.boldadmin.sektor.mobile.android.api.valueobject.WorkTime
 
 interface CollaboratorGateway {
 
-    fun updateLocation(gpsCoordinates: GpsCoordinates)
+    fun updateCoordinates(gpsCoordinates: GpsCoordinates)
 
     fun getWorkTime(): WorkTime
 }

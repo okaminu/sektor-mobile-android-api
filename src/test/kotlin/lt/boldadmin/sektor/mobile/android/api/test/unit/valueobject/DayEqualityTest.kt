@@ -1,6 +1,8 @@
 package lt.boldadmin.sektor.mobile.android.api.test.unit.valueobject
 
 import lt.boldadmin.sektor.mobile.android.api.valueobject.Day
+import lt.boldadmin.sektor.mobile.android.api.valueobject.DayOfWeek.TUESDAY
+import lt.boldadmin.sektor.mobile.android.api.valueobject.DayOfWeek.WEDNESDAY
 import lt.boldadmin.sektor.mobile.android.api.valueobject.MinuteRange
 import org.junit.jupiter.api.Assertions.assertFalse
 import org.junit.jupiter.api.Assertions.assertTrue
@@ -10,12 +12,12 @@ class DayEqualityTest {
 
     @Test
     fun `Returns true when same days of week are compared`() {
-        assertTrue(Day(minuteRange = MinuteRange(10, 20), dayOfWeekIndex = 2) == Day(dayOfWeekIndex = 2))
+        assertTrue(Day(TUESDAY, MinuteRange(10, 20)) == Day(TUESDAY))
     }
 
     @Test
     fun `Returns false when different days are compared`() {
-        assertFalse(Day(dayOfWeekIndex = 2) == Day(dayOfWeekIndex = 3))
+        assertFalse(Day(TUESDAY) == Day(WEDNESDAY))
     }
 
     @Test
@@ -26,15 +28,15 @@ class DayEqualityTest {
 
     @Test
     fun `Is reflexive`() {
-        val day = Day(dayOfWeekIndex = 2)
+        val day = Day(TUESDAY)
 
         assertTrue(day == day)
     }
 
     @Test
     fun `Is symmetric`() {
-        val firstDay = Day(dayOfWeekIndex = 2)
-        val secondDay = Day(dayOfWeekIndex = 2)
+        val firstDay = Day(TUESDAY)
+        val secondDay = Day(TUESDAY)
 
         assertTrue(firstDay == secondDay)
         assertTrue(secondDay == firstDay)
@@ -42,9 +44,9 @@ class DayEqualityTest {
 
     @Test
     fun `Is transitive`() {
-        val firstDay = Day(dayOfWeekIndex = 2)
-        val secondDay = Day(dayOfWeekIndex = 2)
-        val thirdDay = Day(dayOfWeekIndex = 2)
+        val firstDay = Day(TUESDAY)
+        val secondDay = Day(TUESDAY)
+        val thirdDay = Day(TUESDAY)
 
         assertTrue(firstDay == secondDay)
         assertTrue(firstDay == thirdDay)
@@ -52,8 +54,8 @@ class DayEqualityTest {
 
     @Test
     fun `Is consistent`() {
-        val firstDay = Day(dayOfWeekIndex = 2)
-        val secondDay = Day(dayOfWeekIndex = 2)
+        val firstDay = Day(TUESDAY)
+        val secondDay = Day(TUESDAY)
 
         assertTrue(firstDay == secondDay)
         assertTrue(firstDay == secondDay)
@@ -62,7 +64,7 @@ class DayEqualityTest {
     @Test
     @Suppress("SENSELESS_COMPARISON")
     fun `Never equal to null`() {
-        assertFalse(Day(dayOfWeekIndex = 2) == null)
+        assertFalse(Day(TUESDAY) == null)
     }
 
 }

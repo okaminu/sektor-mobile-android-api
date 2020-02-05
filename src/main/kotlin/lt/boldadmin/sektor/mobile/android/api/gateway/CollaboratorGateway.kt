@@ -8,5 +8,5 @@ interface CollaboratorGateway {
 
     fun updateCoordinates(gpsCoordinates: GpsCoordinates)
 
-    fun getWorkTime(): SortedSet<Day>
+    fun getWorkWeek(): SortedSet<Day>
 }

@@ -13,7 +13,7 @@ enum class DayOfWeek {
 
     companion object {
         fun of(index: Int): DayOfWeek {
-            if (index <= 0 || index >= 8 )
+            if (index <= 0 || index >= 8)
                 throw DateTimeException("Given index $index is out of bounds")
 
             return values().toList()[index - 1]

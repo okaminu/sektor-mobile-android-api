@@ -1,11 +1,9 @@
 package lt.boldadmin.sektor.mobile.android.api.valueobject
 
-import lt.boldadmin.sektor.mobile.android.api.valueobject.DayOfWeek.MONDAY
-
 data class DayMinuteInterval(
-    val dayOfWeek: DayOfWeek = MONDAY,
-    val interval: MinuteInterval = MinuteInterval(),
-    val enabled: Boolean = false
+    val dayOfWeek: DayOfWeek,
+    val interval: MinuteInterval,
+    val enabled: Boolean
 ): Comparable<DayMinuteInterval> {
 
     override fun compareTo(other: DayMinuteInterval): Int = this.dayOfWeek.compareTo(other.dayOfWeek)

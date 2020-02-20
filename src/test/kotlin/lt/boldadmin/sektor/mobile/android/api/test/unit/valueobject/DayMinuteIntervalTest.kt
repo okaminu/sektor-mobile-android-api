@@ -27,37 +27,56 @@ class DayMinuteIntervalTest {
 
     @Nested
     inner class ComparisonTests {
-        @Test
-        fun `Returns 0 when same days of week are compared`() {
-            val firstDay = createDayMinuteInterval(TUESDAY, MinuteInterval(10, 20))
-            val secondDay = createDayMinuteInterval(TUESDAY)
 
-            val compareResult = firstDay.compareTo(secondDay)
+        @Test
+        fun `Returns 0 when same day minute intervals are compared`() {
+            val first = createDayMinuteInterval(TUESDAY, MinuteInterval(10, 20))
+            val second = createDayMinuteInterval(TUESDAY)
+
+            val compareResult = first.compareTo(second)
 
             assertEquals(0, compareResult)
         }
 
         @Test
-        fun `Returns 1 when day is compared to the previous day`() {
-            assertEquals(1, createDayMinuteInterval(WEDNESDAY).compareTo(createDayMinuteInterval(TUESDAY)))
+        fun `Returns 1 when day minute interval is compared to the previous day's`() {
+            val first = createDayMinuteInterval(WEDNESDAY)
+            val second = createDayMinuteInterval(TUESDAY)
+
+            val compareResult = first.compareTo(second)
+
+            assertEquals(1, compareResult)
         }
 
         @Test
-        fun `Returns -1 when day is compared to the following day`() {
-            assertEquals(-1, createDayMinuteInterval(TUESDAY).compareTo(createDayMinuteInterval(WEDNESDAY)))
+        fun `Returns -1 when day minute interval is compared to the following day's`() {
+            val first = createDayMinuteInterval(TUESDAY)
+            val second = createDayMinuteInterval(WEDNESDAY)
+
+            val compareResult = first.compareTo(second)
+
+            assertEquals(-1, compareResult)
         }
+
     }
 
     @Nested
     inner class EqualityTests {
+
         @Test
-        fun `Returns true when same days of week are compared`() {
-            assertTrue(createDayMinuteInterval(TUESDAY, MinuteInterval(10, 20)) == createDayMinuteInterval(TUESDAY))
+        fun `Returns true when same days minute intervals are compared`() {
+            val first = createDayMinuteInterval(TUESDAY, MinuteInterval(10, 20))
+            val second = createDayMinuteInterval(TUESDAY)
+
+            assertTrue(first == second)
         }
 
         @Test
-        fun `Returns false when different days are compared`() {
-            assertFalse(createDayMinuteInterval(TUESDAY) == createDayMinuteInterval(WEDNESDAY))
+        fun `Returns false when day minute intervals of different days are compared`() {
+            val first = createDayMinuteInterval(TUESDAY)
+            val second = createDayMinuteInterval(WEDNESDAY)
+
+            assertFalse(first == second)
         }
 
         @Test
@@ -68,37 +87,37 @@ class DayMinuteIntervalTest {
 
         @Test
         fun `Is reflexive`() {
-            val day = createDayMinuteInterval(TUESDAY)
+            val i = createDayMinuteInterval(TUESDAY)
 
-            assertTrue(day == day)
+            assertTrue(i == i)
         }
 
         @Test
         fun `Is symmetric`() {
-            val firstDay = createDayMinuteInterval(TUESDAY)
-            val secondDay = createDayMinuteInterval(TUESDAY)
+            val first = createDayMinuteInterval(TUESDAY)
+            val second = createDayMinuteInterval(TUESDAY)
 
-            assertTrue(firstDay == secondDay)
-            assertTrue(secondDay == firstDay)
+            assertTrue(first == second)
+            assertTrue(second == first)
         }
 
         @Test
         fun `Is transitive`() {
-            val firstDay = createDayMinuteInterval(TUESDAY)
-            val secondDay = createDayMinuteInterval(TUESDAY)
-            val thirdDay = createDayMinuteInterval(TUESDAY)
+            val first = createDayMinuteInterval(TUESDAY)
+            val second = createDayMinuteInterval(TUESDAY)
+            val third = createDayMinuteInterval(TUESDAY)
 
-            assertTrue(firstDay == secondDay)
-            assertTrue(firstDay == thirdDay)
+            assertTrue(first == second)
+            assertTrue(first == third)
         }
 
         @Test
         fun `Is consistent`() {
-            val firstDay = createDayMinuteInterval(TUESDAY)
-            val secondDay = createDayMinuteInterval(TUESDAY)
+            val first = createDayMinuteInterval(TUESDAY)
+            val second = createDayMinuteInterval(TUESDAY)
 
-            assertTrue(firstDay == secondDay)
-            assertTrue(firstDay == secondDay)
+            assertTrue(first == second)
+            assertTrue(first == second)
         }
 
         @Test
@@ -114,24 +133,24 @@ class DayMinuteIntervalTest {
 
         @Test
         fun `Generates hash code`() {
-            assertEquals(1, createDayMinuteInterval(TUESDAY, MinuteInterval(100, 200), false).hashCode())
+            assertEquals(1, DayMinuteInterval(TUESDAY, MinuteInterval(100, 200), false).hashCode())
         }
 
         @Test
-        fun `Equal days have equal hash code`() {
-            val firstDay = createDayMinuteInterval(TUESDAY)
-            val secondDay = createDayMinuteInterval(TUESDAY)
+        fun `Equal day minute intervals have equal hash code`() {
+            val first = createDayMinuteInterval(TUESDAY)
+            val second = createDayMinuteInterval(TUESDAY)
 
-            assertTrue(firstDay == secondDay)
-            assertTrue(firstDay.hashCode() == secondDay.hashCode())
+            assertTrue(first == second)
+            assertTrue(first.hashCode() == second.hashCode())
         }
 
         @Test
         fun `Is consistent`() {
-            val day = createDayMinuteInterval(TUESDAY)
+            val i = createDayMinuteInterval(TUESDAY)
 
-            assertTrue(day.hashCode() == day.hashCode())
-            assertTrue(day.hashCode() == day.hashCode())
+            assertTrue(i.hashCode() == i.hashCode())
+            assertTrue(i.hashCode() == i.hashCode())
         }
 
     }

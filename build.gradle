@@ -20,7 +20,6 @@ apply from: 'dependencies.gradle'
 apply from: 'publish.gradle'
 apply from: 'jacoco.gradle'
 
-
 test {
     useJUnitPlatform()
     testLogging {

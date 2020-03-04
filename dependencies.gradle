@@ -5,5 +5,7 @@ repositories {
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
+    testImplementation "org.junit.jupiter:junit-jupiter:5.5.1"
+
     detektPlugins "io.gitlab.arturbosch.detekt:detekt-formatting:$detekt_version"
 }

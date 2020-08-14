@@ -3,7 +3,7 @@ jacoco {
     toolVersion = "0.8.3"
 }
 
-def fileFilter = ['**/*$*$*.*', '**/exception/**', '**/gateway/**', '**/GpsCoordinates*']
+def fileFilter = ['**/*$*$*.*', '**/exception/**', '**/gateway/**', '**/Coordinates*', '**/Project*', '**/Location*']
 def debugTree = fileTree(dir: "${buildDir}/classes/kotlin/main", excludes: fileFilter)
 
 jacocoTestReport {

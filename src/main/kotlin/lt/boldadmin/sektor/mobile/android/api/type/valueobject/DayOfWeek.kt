@@ -1,4 +1,4 @@
-package lt.boldadmin.sektor.mobile.android.api.valueobject
+package lt.boldadmin.sektor.mobile.android.api.type.valueobject
 
 enum class DayOfWeek {
     MONDAY,

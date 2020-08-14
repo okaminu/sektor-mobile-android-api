@@ -1,4 +1,4 @@
-package lt.boldadmin.sektor.mobile.android.api.valueobject
+package lt.boldadmin.sektor.mobile.android.api.type.valueobject
 
 data class DayMinuteInterval(
     val dayOfWeek: DayOfWeek,

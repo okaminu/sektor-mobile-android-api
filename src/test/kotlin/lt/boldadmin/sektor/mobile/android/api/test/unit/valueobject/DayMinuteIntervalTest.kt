@@ -1,8 +1,8 @@
 package lt.boldadmin.sektor.mobile.android.api.test.unit.valueobject
 
-import lt.boldadmin.sektor.mobile.android.api.valueobject.DayMinuteInterval
-import lt.boldadmin.sektor.mobile.android.api.valueobject.DayOfWeek.*
-import lt.boldadmin.sektor.mobile.android.api.valueobject.MinuteInterval
+import lt.boldadmin.sektor.mobile.android.api.type.valueobject.DayMinuteInterval
+import lt.boldadmin.sektor.mobile.android.api.type.valueobject.DayOfWeek.*
+import lt.boldadmin.sektor.mobile.android.api.type.valueobject.MinuteInterval
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test

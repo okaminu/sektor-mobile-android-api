@@ -1,12 +1,12 @@
 package lt.boldadmin.sektor.mobile.android.api.gateway
 
-import lt.boldadmin.sektor.mobile.android.api.valueobject.DayMinuteInterval
-import lt.boldadmin.sektor.mobile.android.api.valueobject.GpsCoordinates
+import lt.boldadmin.sektor.mobile.android.api.type.valueobject.Coordinates
+import lt.boldadmin.sektor.mobile.android.api.type.valueobject.DayMinuteInterval
 import java.util.*
 
 interface CollaboratorGateway {
 
-    fun updateCoordinates(gpsCoordinates: GpsCoordinates)
+    fun updateCoordinates(coordinates: Coordinates)
 
     fun getWorkWeek(): SortedSet<DayMinuteInterval>
 }
